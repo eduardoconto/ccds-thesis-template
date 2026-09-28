@@ -14,12 +14,14 @@
 \usepackage{longtable}  % For long tables
 \usepackage{lipsum}
 \usepackage{siunitx}    % International System of Units
+\usepackage{doi}
+
 
 % MY'25: Removing breakurl because it was causing problems
 % MY'25: DO NOT include natbib or any other bibliography package here, it will be handled by the IGPthesis class
 \usepackage{datetime}   % To manage date format
-\usepackage[pdfusetitle]{hyperref}
-\usepackage{setspace}   % To configure dobule/single space
+%\usepackage{setspace}   % To configure dobule/single space
+\usepackage[nodisplayskipstretch]{setspace}
 \usepackage{multirow}
 \usepackage{pdflscape} 
 \usepackage{afterpage}
@@ -27,23 +29,56 @@
 \usepackage{pdfpages} %include pdf files in appendix
 \usepackage{stackengine} %for overlapping figures
 \usepackage{epigraph} % for highlights
-
+\usepackage{wrapfig}
+\usepackage{ragged2e}
 % MY'25: Here's some additional package I found useful:
-\usepackage[nohyperlinks]{acronym}             % Easily manage acronyms
+%\usepackage[nohyperlinks]{acronym}             
+\usepackage[nohyperlinks]{acronym}                   % Easily manage acronyms
+\usepackage[pdfusetitle]{hyperref}
 \usepackage{adjustbox}                         % Rotate figures by 90 degrees
 \usepackage{algorithmic}                       % Provide algorithm environment
 \usepackage[linesnumbered,ruled]{algorithm2e}  % Nicer algorithms
+\usepackage{pifont}
+% EC'26: more algorithm setup
+\SetAlgorithmName{Procedure}{Procedure}{List of Procedures}
+\SetKwProg{Fn}{def}{:}{end}
+\DontPrintSemicolon
 
+% EC'26: more packages
+% handle alternative label in enum
+\usepackage{enumerate} 
+\usepackage[shortlabels]{enumitem}
+\setlist[itemize]{itemsep=4pt, topsep=2pt, parsep=0pt, partopsep=0pt}
+\setlist[enumerate]{itemsep=4pt, topsep=2pt, parsep=0pt, partopsep=0pt}
+\newcommand{\footurl}[1]{\footnote{\url{#1}}}
+\usepackage{todonotes}
+\usepackage{tabularx}
+\usepackage{xcolor}%
+\usepackage{colortbl}%
+\definecolor{darkred}{HTML}{8B0000}
+% allow to type " and get latex to handle it
+\usepackage[autostyle=false, style=english]{csquotes}
+\MakeOuterQuote{"}
+% Local packages
+\usepackage{cleveref}
+\usepackage{spverbatim}
+\usepackage{makecell} % easy to multi-line cell
+\usepackage{listings}
+
+\setcounter{secnumdepth}{3}
+\lstset{
+    basicstyle=\footnotesize,       
+    breaklines=true,              % Automatically wraps long lines
+    breakatwhitespace=true,       % Breaks lines strictly at spaces
+    stringstyle=\ttfamily,
+    frame=lines,
+    columns=fullflexible,         % Ensures normal character spacing like standard text
+}
 % For block quote colored:
 \usepackage[most]{tcolorbox}
 \definecolor{block-gray}{gray}{0.85}
 \newtcolorbox{blockquote}{colback=block-gray,grow to right by=-1mm,grow to left by=-1mm,boxrule=0pt,boxsep=0pt,breakable}
 
-%%% Handle hypenation for long words
-\tolerance=1
-\emergencystretch=\maxdimen
-\hyphenpenalty=10000
-\hbadness=10000
 
 % MY'24: the following can be helpful when debugging margins
 %\geometry{showframe}
@@ -57,24 +92,36 @@
 % Affiliation format:
 % Line 1 - "Interdisciplinary Graduate Programme"
 % Line 2 - Research Center Name
-\affiliation{Interdisciplinary Graduate Programme \\ Energy Research Institute @ NTU}
+\affiliation{College of Computing and Data Science}
 \affilogo{class/logos/logo_ntu.png}
 
-\TypeOfDocument{A thesis submitted to the Nanyang Technological University in partial fulfilment of the requirement for the degree of Doctor of Philosophy}
+\TypeOfDocument{A thesis submitted to the Nanyang Technological University\\in partial fulfilment of the requirement for the degree of\\Doctor of Philosophy}
 
 %% Date without the day of the month
 \newdateformat{titledate}{\THEYEAR}
-\newdateformat{signaturedate}{\THEDAY\hspace{0.5em}\shortmonthname[\THEMONTH] \THEYEAR}
+\newdateformat{signaturedate}{\twodigit{\THEDAY}/\twodigit{\THEMONTH}/\THEYEAR}
 \date{\titledate\today}
-
-% MY'25: Adding Theorem and Lemma environemnts
+ 
+% MY'25: Adding Theorem and Lemma environments
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
 
+\graphicspath{{Figures/}} 
+
+% EC'26: Selective include for faster compilation
+\iffalse
+\includeonly{%
+  frontmatter,
+  Chapters/conclusion,
+  Chapters/intro
+  %Chapters/2-lit-review
+  %Chapters/builder-application
+}
+\fi
+
+
 \begin{document}
-    %% This command generates all the pages before Chapter 1
-    %% Cover, Abstract, Declaration, Acknowledgements, Contents
-    \makefrontmatter
+    \include{frontmatter}
 
     %% Contents are still in roman numbers, don't touch this
     \cleardoublepage
@@ -108,5 +155,3 @@
     \end{appendices}
 
 \end{document}
-
-

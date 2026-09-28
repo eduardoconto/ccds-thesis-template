@@ -1,6 +1,26 @@
-\theabstract{
+\theabstract{%
+%%% Background
+Digital twins (DTs) have recently emerged as a key technology for designing, controlling, and monitoring safety-critical physical systems. A DT accurately represents its physical counterpart throughout its full lifecycle and co-evolves with it by receiving data and producing key information. Traditionally, DTs relied on high-fidelity, physics-based methods, but these methods quickly become computationally expensive as system complexity increases. To enable fast and scalable predictions, learning-based, real-time DTs have recently emerged. They leverage artificial intelligence (AI) and machine learning (ML) pipelines to obtain reduced-order models from high-fidelity simulations, resulting in a \emph{real-time DT prototype}.
+%
+Crucially, incorporating historical sensor data tailors the real-time DT prototype to a specific physical system, yielding a \emph{real-time DT instance}.
 
-Your goes abstract here.  I was recommended to write about 1000 words for a thesis abstract.  It should provide a brief background on your topic, identify the specific literature gap, and discuss each of the studies you performed to address this gap.  It should discuss the novelty and usefulness of your contributions and clarify what challenges remain.  Use of keywords after the abstract is optional.
+%%% Literature gap
+Despite the rapid adoption of AI/ML, its application in DT engineering remains complex and ad hoc. The \emph{goal} of this thesis is to render the design of learning-based, real-time DTs more \emph{systematic and broadly accessible}. The main contribution of this thesis is \textsc{Function+Data Flow} (FDF), a novel framework to specify learning-based DTs. Our research addresses three key challenges in the DT design process: model manipulation, pipeline diversity, and user-friendly tooling.
 
+%%% Addressing the gap
+The first challenge, \emph{model manipulation}, arises because real-time DTs consist of multiple, interdependent AI/ML models within complex pipelines. To address this, FDF treats \emph{functions} (ML models) as \emph{first-class citizens}: they are defined as a dedicated flow type alongside data flows, allowing them to be accepted as inputs and generated as outputs. Thus, functions can be explicitly manipulated, composed, and reused.
+
+The second challenge, \emph{pipeline diversity}, stems from a core tension: although DT pipelines share foundational techniques like model order reduction or data assimilation, actual implementations remain heavily task- and domain-dependent (e.g., civil engineering, fluid dynamics). FDF addresses this by introducing a \emph{visual data flow paradigm} in which FDF boxes map directly to key components and tasks of the DT engineering pipeline, enabling an intuitive, customizable, and parameterizable workflow description. While standard FDF pipelines are strictly acyclic and lack support for subcomponents (or modules), we extend the framework with a \emph{hierarchical} variant, H-FDF, that lifts these restrictions: H-FDF supports iterative and module pipelines, enabling the design of complex DTs, such as learning ML models co-inductively.
+
+The third challenge, \emph{user-friendly tooling}, reflects a misalignment in target audience: domain experts (experts on the DT target domain) are often the main DT developers, yet current AI/ML frameworks cater mostly to software engineers, requiring substantial programming expertise. To bridge this gap, we implement FDF in a user-friendly, open-source tool called \Builder. The tool features a \emph{graphical modeling environment} to specify, synthesize, and validate DT pipelines, complemented by a tightly integrated library of core operations and ML algorithms tailored to DT engineering.
+
+We validated the usefulness and effectiveness of FDF and \Builder across diverse concrete use cases motivated by industrial applications, such as predictive maintenance of civil infrastructure. We also conducted an \emph{empirical user study} where participants used {\Builder} to implement a representative real-time DT prototype, evaluating perceived usability and feature adequacy. The results indicate that FDF and \Builder achieve \emph{good usability}, especially for domain experts, and that they provide the key features required for an effective DT modeling workflow.
+
+
+%%% Future perspectives
+This research establishes that integrated visual modeling environments are a promising direction for the systematic engineering of learning-based, real-time digital twin instances. Future work includes continuously improving FDF and {\Builder} with advanced methods, an improved user interface, and comprehensive documentation to enable their broad deployment. In addition,
+future research must address the broader DT ecosystem by, among others, supporting real-time DT updates, tightly integrating hybrid AI methods, and supporting agentic AI workflows.
+
+%Your abstract goes here.  I was recommended to write about 1000 words for a thesis abstract.  It should provide a brief background on your topic, identify the specific literature gap, and discuss each of the studies you performed to address this gap.  It should discuss the novelty and usefulness of your contributions and clarify what challenges remain.  Use of keywords after the abstract is optional.
 }
-\keywords{}
+\keywords{Digital twins, Machine learning pipeline, Domain-specific (visual) languages, Data flow, Modeling environments, Reduced-order modeling, Instance specialization}
