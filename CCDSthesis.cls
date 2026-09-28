@@ -10,7 +10,7 @@
 % https://entuedu.sharepoint.com/sites/Student/dept/sasd/oas/SitePages/Qualifying Examination and Thesis/Format of Final Thesis.aspx
 % all changes from the original template by Maricar Rabonzo have been annotated as well.
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{IGPthesis}[2025/01/24 v0.1 
+\ProvidesClass{CCDSthesis}[2025/01/24 v0.1 
 		PhD Thesis Class]
 
 
@@ -23,7 +23,7 @@
 \ProcessOptions\relax
 
 
-% MY'24: Each copy must be in interantional size A4 (210mm x 297mm)
+% MY'24: Each copy must be in international size A4 (210mm x 297mm)
 \ifdefined\TWOSIDED
     \LoadClass[12pt,a4paper,onecolumn,twoside,openright]{report}
 \else
@@ -103,9 +103,28 @@
 \renewcommand{\footrulewidth}{0.4pt}
 
 \fancypagestyle{plain}{
+  % style for first page in chapter
   \fancyhead{}
   \renewcommand{\headrulewidth}{0pt}
-%  \renewcommand{\footrulewidth}{0pt}
+}
+\fancypagestyle{empty}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+% Force blank pages inserted by double-sided printing to use the empty page style.
+\makeatletter
+\def\cleardoublepage{%
+  \clearpage
+  \if@twoside
+    \ifodd\c@page\else
+      \hbox{}%
+      \thispagestyle{empty}%
+      \newpage
+      \if@twocolumn\hbox{}\newpage\fi
+    \fi
+  \fi
 }
 \makeatother
 
@@ -155,6 +174,7 @@
 % 5. Date
 \makeatletter
     \newcommand{\maketitlepage}{
+		\thispagestyle{empty}
         \begin{center}
             \Large{\bf \sffamily \vskip 1em \@title}
             \vfill
@@ -176,7 +196,8 @@
 	\titleformat{\section}[block]{\normalfont\Large\bfseries\sffamily}{\thesection}{15pt}{\Large}
 	\titleformat{\subsection}[block]{\normalfont\large\bfseries\sffamily}{\thesubsection}{15pt}{\large}
 	\titleformat{\subsubsection}[block]{\normalfont\normalsize\bfseries\sffamily}{\thesubsubsection}{15pt}{\normalsize}
-	\titleformat{\paragraph}[block]{\normalfont\normalsize\bfseries\sffamily}{\paragraph}{15pt}{\normalsize}
+	\titleformat{\paragraph}[block]{\normalfont\normalsize\bfseries\sffamily}{\paragraph}{12pt}{\small}
+	\titlespacing*{\paragraph}{0pt}{0pt}{0pt}
 	\titleformat{\subparagraph}[block]{\normalfont\normalsize\bfseries\sffamily}{\subparagraph}{15pt}{\normalsize}
 \makeatother
 
@@ -192,6 +213,7 @@
 
 % takes care of the abstract and aknowledgements
 \RequirePackage{abstract}
+\RequirePackage[pdfusetitle]{hyperref}
 \makeatletter
 \newcommand{\keywords}[1]{\def \@keywords {#1}}
 \newcommand{\theabstract}[1]{\def \@theabstract {#1}}
@@ -219,7 +241,9 @@
 % MY'24: Format the abstract in the same way as declarations and acknowledgements.
 \makeatletter
 \renewenvironment{abstract}{
-  \chapter*{Abstract}
+	\chapter*{Abstract}
+	% EC: make sure header displays correct label
+	\markboth{ABSTRACT}{ABSTRACT}
 }{}
 \makeatother
 
@@ -235,19 +259,17 @@
 \newcommand{\makefrontmatter}{
     %% Roman numbers until Chapter 1
     \pagenumbering{roman}
-    \pagestyle{empty}
+    \pagestyle{fancy}
 	\maketitle
 
     % MY'24: Start title page on right side if this copy is two-sided
     \ifdefined\TWOSIDED
         \cleardoublepage
     \fi
-    \thispagestyle{empty}
     \maketitlepage
 
     % MY'24: Start declarations on the right side if this copy is two-sided
     \ifdefined\TWOSIDED
-        \pagestyle{fancy}
         \cleardoublepage
     \fi
 	\pagestyle{fancy}
@@ -263,6 +285,8 @@
 		\chapter*{Acknowledgements}
 		\@acknowledgements
 	\fi
+    % EC: Add Contents to PDF bookmark
+    \pdfbookmark[0]{Contents}{Contents}
     \tableofcontents
     % MY'24: According to the guidelines these should come before the abstract.
     \listoffigures
@@ -278,6 +302,9 @@
 	\else
 		\chapter*{List of Acronyms}
 		\@acronyms
+		\addcontentsline{toc}{chapter}{List of Acronyms}
+		% EC: make sure header displays correct label
+		\markboth{LIST OF ACRONYMS}{LIST OF ACRONYMS} 
 	\fi
     
 	% make the abstract and keywords
