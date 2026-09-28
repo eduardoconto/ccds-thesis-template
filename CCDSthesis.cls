@@ -10,7 +10,7 @@
 % https://entuedu.sharepoint.com/sites/Student/dept/sasd/oas/SitePages/Qualifying Examination and Thesis/Format of Final Thesis.aspx
 % all changes from the original template by Maricar Rabonzo have been annotated as well.
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{IGPthesis}[2025/01/24 v0.1 
+\ProvidesClass{CCDSthesis}[2025/01/24 v0.1 
 		PhD Thesis Class]
 
 
