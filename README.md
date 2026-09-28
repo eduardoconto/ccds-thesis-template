@@ -1,7 +1,7 @@
-# Unofficial IGP Thesis Template
-[简体中文](#非官方IGP论文型板) ❀ [Bahasa Melayu](#templat-tesis-igp-tak-rasmi)
+# Unofficial CCDS Thesis Template
+[简体中文](#非官方CCDS论文型板) ❀ [Bahasa Melayu](#templat-tesis-ccds-tak-rasmi)
 
-This IGP thesis template is based on the unofficial [ASE thesis template](https://www.overleaf.com/latex/templates/phd-thesis-ntu-singapore-asian-school-of-the-environment-unofficial/jgtmdbzcrzzt) by Marciar Rabonza.  Please thank her for doing the heavy lifting.
+This CCDS thesis template is based on the unofficial [ASE thesis template](https://www.overleaf.com/latex/templates/phd-thesis-ntu-singapore-asian-school-of-the-environment-unofficial/jgtmdbzcrzzt) by Marciar Rabonza.  Please thank her for doing the heavy lifting.
 
 ## Instructions
 1. In Github click on "<> Code" and then "Download ZIP."
@@ -16,8 +16,8 @@ This IGP thesis template is based on the unofficial [ASE thesis template](https:
 
 ## Change Log
 I have made the following changes from the unofficial ASE template:
-* ```NTUASE_MR.cls``` was renamed to ```IGPthesis.cls``` to match IEEE LaTeX file naming scheme.
-* The ```IGPthesis``` class can now take four options:
+* ```NTUASE_MR.cls``` was renamed to ```CCDSthesis.cls``` to match IEEE LaTeX file naming scheme.
+* The ```CCDSthesis``` class can now take four options:
   * ```twosided``` - use this option if you are preparing a PDF for binding.  It will insert blank pages to prevent chapters from starting on even pages.
   * ```ieeebib``` - use this option if you prefer the IEEE citation style.
   * ```kbib``` - use this option if you prefer the AAAI citation style.
@@ -38,10 +38,10 @@ I have made the following changes from the unofficial ASE template:
 * Added examples for subfigures, proofs, theorems, lemmas, and algorithms.
 
 ## Licensing
-The class file ```IGPthesis.cls``` is distributed under the GNU General Public License (GPL) 3.0.  ```IEEEtran.bst``` and ```kbib.bst``` are distributed under the LaTeX Project Public License (LPPL).  To the best of my knowledge Dr. Rabonza released the original ```*.tex``` files under the Creative Commons CC BY 4.0 and I am releasing any ```*.tex``` files modified by me under the same license.
+The class file ```CCDSthesis.cls``` is distributed under the GNU General Public License (GPL) 3.0.  ```IEEEtran.bst``` and ```kbib.bst``` are distributed under the LaTeX Project Public License (LPPL).  To the best of my knowledge Dr. Rabonza released the original ```*.tex``` files under the Creative Commons CC BY 4.0 and I am releasing any ```*.tex``` files modified by me under the same license.
 
-# 非官方IGP论文型板
-本IGP论文型版扩展Marciar Rabonza的非官方[ASE论文型板](https://www.overleaf.com/latex/templates/phd-thesis-ntu-singapore-asian-school-of-the-environment-unofficial/jgtmdbzcrzzt)。请感谢她为她的努力。
+# 非官方CCDS论文型板
+本CCDS论文型版扩展Marciar Rabonza的非官方[ASE论文型板](https://www.overleaf.com/latex/templates/phd-thesis-ntu-singapore-asian-school-of-the-environment-unofficial/jgtmdbzcrzzt)。请感谢她为她的努力。
 
 ## 用法
 1. 在Github点击“<> Code”就选择“Download ZIP”。
@@ -56,8 +56,8 @@ The class file ```IGPthesis.cls``` is distributed under the GNU General Public L
 
 ## 变更日志
 用非官方ASE型版为基础我改过如以下：
-* ```NTUASE_MR.cls```成为```IGPthesis.cls```为更配合IEEE的LaTeX档案名称系统。
-* ```IGPthesis```类现在接受三个可选的选项：
+* ```NTUASE_MR.cls```成为```CCDSthesis.cls```为更配合IEEE的LaTeX档案名称系统。
+* ```CCDSthesis```类现在接受三个可选的选项：
   * ```twosided``` - 使用这个如果你在准备一个为装帧的PDF。它放入空页为避免在偶页起章。
   * ```ieeebib``` - 使用这个如果你宁可用IEEE引文风。
   * ```kbib``` - 使用这个如果你宁可用AAAI引文风。
@@ -74,10 +74,10 @@ The class file ```IGPthesis.cls``` is distributed under the GNU General Public L
 * 加例子为分形象、证明、定理、引理、与算法环境。
 
 ## 许可证信息
-类档案```IGPthesis.cls```被发布在GNU通用公共许可证（GPL）3.0版本下。```IEEEtran.bst```与```kbib.bst```被发布在LaTeX项目公共许可证（LPPL）下。据我所知Rabonza博士公开原本```*.tex```档案在知识共享许可协议CC BY 4.0下并且我同样公开我所改变的```*.tex```档案在同一个许可证下。
+类档案```CCDSthesis.cls```被发布在GNU通用公共许可证（GPL）3.0版本下。```IEEEtran.bst```与```kbib.bst```被发布在LaTeX项目公共许可证（LPPL）下。据我所知Rabonza博士公开原本```*.tex```档案在知识共享许可协议CC BY 4.0下并且我同样公开我所改变的```*.tex```档案在同一个许可证下。
 
-# Templat Tesis IGP Tak Rasmi
-Templat tesis IGP ini berdasarkan [templat tesis ASE](https://www.overleaf.com/latex/templates/phd-thesis-ntu-singapore-asian-school-of-the-environment-unofficial/jgtmdbzcrzzt) tak rasmi oleh Marciar Rabonza.  Sila terima kasih kepadanya untuk angkat berat.
+# Templat Tesis CCDS Tak Rasmi
+Templat tesis CCDS ini berdasarkan [templat tesis ASE](https://www.overleaf.com/latex/templates/phd-thesis-ntu-singapore-asian-school-of-the-environment-unofficial/jgtmdbzcrzzt) tak rasmi oleh Marciar Rabonza.  Sila terima kasih kepadanya untuk angkat berat.
 
 ## Arahan
 1. Dalam Github klik "<> Code" kemudian "Download ZIP."
@@ -92,8 +92,8 @@ Templat tesis IGP ini berdasarkan [templat tesis ASE](https://www.overleaf.com/l
 
 ## Log Perubahan
 Saya telah membuat perubahan berikut daripada templat ASE tak rasmi:
-* ```NTUASE_MR.cls``` menjadi ```IGPthesis.cls``` untuk mematuhi skema penamaan fail LaTeX di IEEE.
-* Kelas ```IGPthesis``` sekarang menerima tiga pilihan:
+* ```NTUASE_MR.cls``` menjadi ```CCDSthesis.cls``` untuk mematuhi skema penamaan fail LaTeX di IEEE.
+* Kelas ```CCDSthesis``` sekarang menerima tiga pilihan:
   * ```twosided``` - guna pilihan ini semasa menyiapkan PDF untuk penjilidan.  Ia akan memasukkan muka surat kosong untuk mengelakkan bab bermula dalam muka surat genap.
   * ```ieeebib``` - guna pilihan ini jika suka gaya petikan IEEE.
   * ```kbib``` - guna pilihan ini jika suka gaya petikan AAAI.
@@ -110,4 +110,4 @@ Saya telah membuat perubahan berikut daripada templat ASE tak rasmi:
 * Tambah contoh untuk subfigure, pembuktian, teorem, lemma, dan algoritma.
 
 ## Pelesenan
-Fail kelas ```IGPthesis.cls``` diedarkan di bawah Lesen Awam Am GNU (GPL) 3.0.  ```IEEEtran.bst``` dan ```kbib.bst``` diedarkan di bawah Lesen Awam Projek LaTeX (LPPL).  Sepanjang pengetahuan saya Dr. Rabonza mengeluarkan fail ```*.tex``` asli di bawah Creative Commons CC BY 4.0 dan saya juga mengeluarkan sebarang fail ```*.tex``` yang diubahsuai oleh saya di bawah lesen yang sama.
+Fail kelas ```CCDSthesis.cls``` diedarkan di bawah Lesen Awam Am GNU (GPL) 3.0.  ```IEEEtran.bst``` dan ```kbib.bst``` diedarkan di bawah Lesen Awam Projek LaTeX (LPPL).  Sepanjang pengetahuan saya Dr. Rabonza mengeluarkan fail ```*.tex``` asli di bawah Creative Commons CC BY 4.0 dan saya juga mengeluarkan sebarang fail ```*.tex``` yang diubahsuai oleh saya di bawah lesen yang sama.
