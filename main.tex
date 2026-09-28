@@ -41,6 +41,11 @@
 \usepackage{makecell} % easy to multi-line cell
 \usepackage{listings}
 
+% For block quote colored:
+\usepackage[most]{tcolorbox}
+\definecolor{block-gray}{gray}{0.85}
+\newtcolorbox{quoteblock}{colback=block-gray,grow to right by=-1mm,grow to left by=-1mm,boxrule=0pt,boxsep=0pt,breakable}
+
 \SetAlgorithmName{Procedure}{Procedure}{List of Procedures}
 \SetKwProg{Fn}{def}{:}{end}
 \DontPrintSemicolon
@@ -50,8 +55,6 @@
 \usepackage[shortlabels]{enumitem}
 \setlist[itemize]{itemsep=4pt, topsep=2pt, parsep=0pt, partopsep=0pt}
 \setlist[enumerate]{itemsep=4pt, topsep=2pt, parsep=0pt, partopsep=0pt}
-\newcommand{\footurl}[1]{\footnote{\url{#1}}}
-
 
 % allow to type " and get latex to handle it
 \usepackage[autostyle=false, style=english]{csquotes}
